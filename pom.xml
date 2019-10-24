@@ -6,6 +6,7 @@
     <modules>
         <module>entity</module>
         <module>forumn_admin</module>
+        <module>service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
