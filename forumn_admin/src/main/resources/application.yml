@@ -1,0 +1,102 @@
+server:
+  port: 8541
+#eureka:
+#  instance:
+#    lease-expiration-duration-in-seconds: 30 #服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除
+#    lease-renewal-interval-in-seconds: 10 #服务刷新时间配置，每隔这个时间会主动心跳一次
+#    hostname: localhost
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
+#    # 使用IP注册
+#    preferIpAddress: true
+#  client:
+#    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true   单机调试设为false
+#    #    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+#    fetchRegistry: true #是否从Eureka中获取注册信息，默认为true
+#    serviceUrl:
+#      defaultZone: http://user:password@192.168.1.188:8761/eureka/
+
+
+
+#springboot整合mybatis框架
+#加载Mybatis配置文件
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  #  config-location: classpath:mapper/config/sqlMapConfig.xml
+  #定义别名
+  type-aliases-package: com.hynetwork.entity
+
+#pagehelper分页插件配置
+pagehelper:
+  helper-dialect: sqlserver
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    jpa:
+      show-sql: true
+  resources:
+    static-locations: /WEB-INF/
+  application:
+    name: forum
+#  redis:
+#    database:
+#      db0: 0
+#      timeout: 10000
+#      pool:
+#        max-idle: 3000
+#        min-idle: 30
+#        max-wait: -1
+#    host: 192.168.1.188
+##    host: 127.0.0.1
+#    port: 6379
+#    password:
+
+
+  datasource:
+    #    url: jdbc:mysql://127.0.0.1:3306/springboot_test
+    url: jdbc:sqlserver://103.129.16.16:1433;DatabaseName=zy_msg
+#    url: jdbc:mysql://117.34.117.113:3306/zhaoyin?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: deve
+    #    configserver+rabbitmq配置开始
+    password: testdeve
+
+logging:
+  level:
+    com.zhaoyin.mapper: debug
+#  cloud:
+#    config:
+#      label: master
+#      discovery:
+#        enabled: true
+#        service-id: config
+#      name: eureka-client
+#      profile: dev
+#  rabbitmq:                    #本地环境不需要配置mq，但是需要启动mq,Springboot会自动连接本地mq
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+
+#    configserver+rabbitmq配置结束
+
+
+
+#关于eureka的配置文件在configServer中动态读取开始
+#eureka:
+#  client:
+#    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
+#    fetchRegistry: true #是否从Eureka中获取注册信息，默认为true
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#      prefer-ip-address: true #是否显示地址为IP地址
+#      instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+#management:
+#  endpoint:
+#    web:
+#      exposure:
+#        include: bus-refresh
+#关于eureka的配置文件在configServer中动态读取结束

@@ -1,0 +1,501 @@
+.warps{
+	/*width:1920px;
+	height:1080px;*/
+	background:rgba(240,243,248,1);
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+/* 顶部 */
+.herder{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:1905px;
+	height:80px;
+	background:rgba(0,126,183,1);
+	box-sizing: border-box;
+}
+.herderOne{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 270px;
+	height: 70px;
+	box-sizing: border-box;
+}
+
+.herderOneSpan{
+	width:89px;
+	height:21px;
+	color: #FFFFFF;
+	font-size: 20px;
+	background:rgba(0,126,183,1);
+}
+.herderTwo{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1650px;
+	height: 70px;
+	box-sizing: border-box;
+}
+.herderTwo-left{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 420px;
+	height: 70px;
+	margin-left: 50px;
+}
+.herderTwo-leftTop{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 420px;
+	height: auto;
+}
+.xiala-topIocn{
+	display: flex !important;
+	justify-content: flex-start;
+	align-content: center;
+	height: 25px !important;
+}
+.xiala-top{
+	display: flex;
+	width: 10px;
+	height: 10px;
+	margin-left: -16px;
+	background: url(../img/icon_顶部栏_下拉@2x.png) no-repeat center;
+}
+.xiala-text{
+	display: flex;
+	width:122px;
+	height:14px;
+	margin-left: 10px;
+	text-align: center;
+	font-size:14px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:14px;
+}
+.herderTwo-leftFoot{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 420px;
+	height: auto;
+}
+.herderTwo-leftFootOne{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100px;
+	height: 26px;
+}
+.pcPc{
+	display: flex;
+	width: 26px;
+	height: 26px;
+}
+.pcPc-text{
+    display: flex;
+	height:14px;
+	font-size:12px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:14px;
+}
+.pcPc-textss{
+	display: flex;
+	width:11px;
+	height:14px;
+	font-size:18px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:14px;
+}
+
+.herderTwo-right{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 420px;
+	height: 70px;
+}
+.huanFu{
+	width: 26px;
+	height: 26px;
+	border: none;
+	background: url(../img/icon_顶部栏_通知备份.png) no-repeat center;
+}
+.xiaoXi{
+	width: 26px;
+	height: 26px;
+	border: none;
+	background: url(../img/icon_顶部栏_通知.png) no-repeat center;
+}
+
+.myName{
+	width:40px;
+	display: inline-block;
+	font-size:12px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color: red;
+	/* color:rgba(255,255,255,1); */
+	line-height:30px;
+}
+.xiala-topss{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	background: url(../img/icon_顶部栏_下拉@2x.png) no-repeat center;
+}
+.xialaCaidan{
+	height: auto !important;
+	background:rgba(0,126,183,1) !important;
+}
+/*      这里和下拉图标有点冲突      */
+.xialaCaidan :hover{
+	background:rgba(0,126,183,1) !important;
+}
+.ddDd{
+	background:rgba(0,126,183,1) !important;
+}
+.layui-nav.geRen{
+	width: 320px;
+	height: 70px;
+	line-height: 70px;
+	background-color: transparent;
+}
+.layui-nav .layui-this:after, 
+.layui-nav-bar, .layui-nav-tree 
+.layui-nav-itemed:after{
+	background-color: transparent;
+}
+
+
+
+
+
+
+.content{
+	width:1920px;
+	height: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+/*左侧下拉固定列表*/
+.list{
+	width: 270px;
+	height: 1000px;
+	display: inline-block;
+	box-sizing: border-box;
+	
+}
+.layui-nav-tree{
+	width: 270px;
+    height: 1000px;
+}
+.layui-nav-tree .layui-nav-child a{
+	height: 50px;
+	line-height: 50px;
+}
+.layui-nav *{
+	font-size:14px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:14px;
+}
+/*左侧列表图标*/
+.listImg{
+	width: 26px;
+	height: 26px;
+	margin-left: 47px;
+}
+.listText{
+	width:57px;
+	height:14px;
+	font-size:14px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:14px;
+	display: inline-block;
+	margin-left: 9px;
+}
+.listText-xiala{
+	width: 57px;
+	height: 14px;
+	display: inline-block;
+	margin-left: 87px;
+}
+.dian{
+	width:57px;
+	height:14px;
+	font-size:14px;
+	font-family:PingFang-SC;
+	font-weight:500;
+	color:rgba(255,185,70,1);
+	line-height:14px;
+}
+/* 左侧点击之后样式 */
+.layui-nav-tree .layui-nav-child dd
+.layui-this, .layui-nav-tree 
+.layui-nav-child dd.layui-this a, 
+.layui-nav-tree .layui-this, 
+.layui-nav-tree .layui-this>a, 
+.layui-nav-tree .layui-this>a:hover{
+	background-color: transparent;
+}
+
+
+/*隐藏下拉图标*/
+.layui-nav .layui-nav-more{
+	display: none;
+}
+
+/*头部导航栏*/
+.nav{
+	width:1650px;
+	height:64px;
+	display: inline-block;
+	box-shadow:0px 3px 8px 0px rgba(227,231,233,1);
+}
+.layui-nav.layui-bg-blue{
+	height: 64px;
+}
+.layui-bg-blue{
+	background:rgba(255,255,255,1) !important;
+	box-shadow:0px 3px 8px 0px rgba(227,231,233,1);
+}
+.daohang{
+	width: 100px;
+	height: 64px;
+	display: inline-block;
+	text-align: center;
+	line-height: 64px;
+	font-size:18px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(149,149,149,1);
+	
+}
+.dianP{
+	font-size:18px;
+	font-family:PingFang-SC;
+	font-weight:500;
+	color:rgba(0,126,183,1);
+}
+.layui-nav .layui-this:after{
+	content: none;
+}
+.layui-btn.tianjiaquan{
+	width: 116px;
+	background: url(../img/btn_添加.png) no-repeat center;
+}
+
+/* 内容头部 */
+.center{
+	display: flex;
+	width: 1650px;
+}
+.centerTop{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1000px;
+	height: 85px;
+	margin-left: 310px;
+	margin-top: -932px;
+}
+.centerTopOne{
+	display: flex;
+	widows: 230px;
+	height: 35px;
+}
+.topSpan{
+	width: 70px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+.layui-input, .layui-textarea{
+	width:150px;
+	height:35px;
+	background:rgba(255,255,255,1);
+	border-radius:4px;
+	border:1px solid rgba(225,225,232,1);
+}
+select{
+	background:rgba(255,255,255,1);
+	border-radius:4px;
+	border:1px solid rgba(225,225,232,1);
+}
+.yuan{
+	width: 80px;
+	height: 35px;
+	border-radius: 6px;
+	background: url(../img/btn_论坛管理_搜索.png) no-repeat center;
+}
+/* 表格上方 */
+.biaoTop{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1570px;
+	height: 42px;
+	margin-left: 310px;
+	margin-top: -846px;
+	background:rgba(253,245,224,1);
+	border-radius:4px 4px 0px 0px;
+}
+.biaoTopLeft{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 320px;
+	height: 40px;
+	text-align: center;
+}
+.biaogeLeft-shuju{
+	width: 320px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	font-size:16px;
+	font-family:PingFang-SC;
+	font-weight:400;
+	color:rgba(60,65,68,1);
+}
+/* 表格上方按钮 */
+/* .layui-btn-sm{
+	height: 24px;
+	width: 80px;
+	line-height: 24px;
+	border-radius: 16px;
+} */
+.fabu{
+	background: url(../img/btn_list_编辑备份%202.png) no-repeat center;
+}
+.shanchu{
+	background: url(../img/btn_list_编辑备份.png) no-repeat center;
+}
+.biaoTopRight{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 310px;
+	height: 40px;
+	line-height: 40px;
+}
+/* 表格 */
+
+/*.layui-table, .layui-table-view{
+	width: 1570px;
+	margin-left: 310px;
+	margin-top: -801px;
+}*/
+
+
+.layui-btn-sm{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 16px;
+}
+
+.chuan{
+	background: url(../../img/member/suo.png) no-repeat center;
+}
+.bian{
+	background: url(../../img/bian.png) no-repeat center;
+}
+.jiao{
+	background: url(../../img/member/jiao.png) no-repeat center;
+}
+.jin{
+	background: url(../../img/member/jin.png) no-repeat center;
+}
+/* 操作按钮 */
+.layui-btn-danger{
+	background-color: transparent;
+}
+.xiangqing{
+	background-color: transparent;
+}
+.xinzeng{
+	font-size: 16px;
+}
+/* 表格 */
+.biaoge{
+	width: 1570px;
+	height: 760px;
+	margin-top: -814px;
+	margin-left: 310px;
+}
+.layui-table td, .layui-table th{
+	text-align: center;
+}
+.layui-table tbody tr:hover, 
+.layui-table thead tr, .layui-table-click, 
+.layui-table-header, .layui-table-hover, 
+.layui-table-mend, .layui-table-patch, 
+.layui-table-tool, .layui-table-total, 
+.layui-table-total tr, .layui-table[lay-even] tr:nth-child(even){
+	background:rgba(243,248,255,1);
+	font-weight:500;
+	color:rgba(0,0,0,0.85);
+}
+/* 表格按钮 */
+.yan{
+	background: url(../img/btn_list_锁定备份%206.png) no-repeat center;
+}
+.yan:hover{
+	background: url(../img/btn_list_锁定备份%20.png) no-repeat center;
+}
+.yans{
+	background: url(../img/btn_list_锁定备份%20.png) no-repeat center;
+}
+.yans:hover{
+	background: url(../img/btn_list_锁定备份%206.png) no-repeat center;
+}
+.shen{
+	background: url(../img/btn_list_锁定备份%207.png) no-repeat center;
+}
+.shan{
+	background: url(../img/btn_list_锁定备份%208.png) no-repeat center;
+}
+.xiang{
+	background: url(../img/btn_list_锁定备份%2009.png) no-repeat center;
+}
+.suo{
+	background: url(../img/btn_list_锁定备份%205.png) no-repeat center;
+}
+
+
+
+/* 分页 */
+.layui-laypage{
+	margin-left: 680px;
+}
+.layui-laypage a, .layui-laypage span{
+	border-radius: 50%;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+	border-radius: 50%;
+}
+.layui-btn-group .layui-btn{
+	width: 64px;
+	height: 24px;
+	line-height: 24px;
+}
+
