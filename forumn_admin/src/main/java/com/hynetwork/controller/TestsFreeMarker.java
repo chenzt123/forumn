@@ -1,4 +1,4 @@
-package com.hynetwork.Controller;
+package com.hynetwork.controller;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
