@@ -29,6 +29,11 @@
     from forumn_topic
     where topic_id = #{topicId,jdbcType=INTEGER}
   </select>
+  <select id="allforumntopic" resultMap="BaseResultMap">
+    select  <include refid="Base_Column_List"/> from forumn_topic
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from forumn_topic
     where topic_id = #{topicId,jdbcType=INTEGER}
