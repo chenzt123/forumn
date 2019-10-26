@@ -38,6 +38,7 @@
     delete from forumn_topic
     where topic_id = #{topicId,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" parameterType="com.hynetwork.entity.ForumnTopic" >
     insert into forumn_topic (topic_id, topic_title, draw_id, 
       topic_status, publish_time, author_id, 
@@ -109,6 +110,17 @@
       </if>
     </trim>
   </insert>
+
+  <insert id="inserts">
+    insert into forumn_topic
+        (topic_title, draw_id,
+         topic_status, publish_time, author_id,
+         create_time, relative_mod_it, topic_content)
+    values (#{topicTitle,jdbcType=VARCHAR}, #{drawId,jdbcType=VARCHAR},
+            #{topicStatus,jdbcType=SMALLINT}, #{publishTime,jdbcType=TIMESTAMP}, #{authorId,jdbcType=VARCHAR},
+            #{createTime,jdbcType=TIMESTAMP}, #{relativeModIt,jdbcType=VARCHAR}, #{topicContent,jdbcType=LONGVARCHAR})
+  </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.hynetwork.entity.ForumnTopic" >
     update forumn_topic
     <set >

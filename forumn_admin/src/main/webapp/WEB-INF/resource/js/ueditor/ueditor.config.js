@@ -32,17 +32,17 @@
         // 服务器统一请求接口路径
         , serverUrl:  "../ueditor/config"
 
-        //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
+        //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
         , toolbars: [[
-             'undo', 'redo', '|',
+            'fullscreen', 'source', '|', 'undo', 'redo', '|',
             'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
             'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
             'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
             'directionalityltr', 'directionalityrtl', 'indent', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
             'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', /*'insertimage',*/ 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
-            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'insertimage', 'emotion','insertvideo','insertframe', 'insertcode', '|',
+            'horizontal', 'date', 'time', 'spechars','wordimage', '|',
             'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
             'print', 'preview', 'searchreplace', 'drafts', 'help'
         ]]
@@ -175,29 +175,29 @@
 
         //,autoTransWordToList:false  //禁止word中粘贴进来的列表自动变成列表标签
 
-       // fontfamily
-       // 字体设置 label留空支持多语言自动切换，若配置，则以配置值为准
-        ,'fontfamily':[
-           { label:'',name:'songti',val:'宋体,SimSun'},
-           { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
-           { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
-           { label:'',name:'heiti',val:'黑体, SimHei'},
-           { label:'',name:'lishu',val:'隶书, SimLi'},
-           { label:'',name:'andaleMono',val:'andale mono'},
-           { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
-           { label:'',name:'arialBlack',val:'arial black,avant garde'},
-           { label:'',name:'comicSansMs',val:'comic sans ms'},
-           { label:'',name:'impact',val:'impact,chicago'},
-           { label:'',name:'timesNewRoman',val:'times new roman'}
-        ]
+        //fontfamily
+        //字体设置 label留空支持多语言自动切换，若配置，则以配置值为准
+        //,'fontfamily':[
+        //    { label:'',name:'songti',val:'宋体,SimSun'},
+        //    { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
+        //    { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
+        //    { label:'',name:'heiti',val:'黑体, SimHei'},
+        //    { label:'',name:'lishu',val:'隶书, SimLi'},
+        //    { label:'',name:'andaleMono',val:'andale mono'},
+        //    { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
+        //    { label:'',name:'arialBlack',val:'arial black,avant garde'},
+        //    { label:'',name:'comicSansMs',val:'comic sans ms'},
+        //    { label:'',name:'impact',val:'impact,chicago'},
+        //    { label:'',name:'timesNewRoman',val:'times new roman'}
+        //]
 
         //fontsize
         //字号
-        ,'fontsize':[10, 11, 12, 14, 16, 18, 20, 24, 36]
+        //,'fontsize':[10, 11, 12, 14, 16, 18, 20, 24, 36]
 
         //paragraph
         //段落格式 值留空时支持多语言自动识别，若配置，则以配置值为准
-        ,'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}
+        //,'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}
 
         //rowspacingtop
         //段间距 值和显示的名字相同
@@ -228,7 +228,7 @@
         //]
 
         //打开右键菜单功能
-        ,enableContextMenu: false
+        //,enableContextMenu: true
         //右键菜单的内容，可以参考plugins/contextmenu.js里边的默认菜单的例子，label留空支持国际化，否则以此配置为准
         //,contextMenu:[
         //    {
@@ -250,8 +250,8 @@
         //,elementPathEnabled : true
 
         //wordCount
-        ,wordCount:true          //是否开启字数统计
-        ,maximumWords:10000       //允许的最大字符数
+        //,wordCount:true          //是否开启字数统计
+        //,maximumWords:10000       //允许的最大字符数
         //字数统计提示，{#count}代表当前字数，{#leave}代表还可以输入多少字符数,留空支持多语言自动切换，否则按此配置显示
         //,wordCountMsg:''   //当前已输入 {#count} 个字符，您还可以输入{#leave} 个字符
         //超出字数限制提示  留空支持多语言自动切换，否则按此配置显示
@@ -287,11 +287,14 @@
 
         //autoFloatEnabled
         //是否保持toolbar的位置不动,默认true
-        ,autoFloatEnabled:false
+        //,autoFloatEnabled:true
         //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的页面
         //,topOffset:30
         //编辑器底部距离工具栏高度(如果参数大于等于编辑器高度，则设置无效)
         //,toolbarTopOffset:400
+
+        //设置远程图片是否抓取到本地保存
+        //,catchRemoteImageEnable: true //设置是否抓取远程图片
 
         //pageBreakTag
         //分页标识符,默认是_ueditor_page_break_tag_
@@ -321,7 +324,7 @@
         //表格是否可以拖拽
         //,tableDragable: true
 
-        //,disabledTableInTable:true  //禁止表格嵌套
+
 
         //sourceEditor
         //源码的查看方式,codemirror 是代码高亮，textarea是文本框,默认是codemirror
@@ -341,8 +344,89 @@
         //    'anchor':'~/dialogs/anchor/anchor.html',
         //}
 
+        //allowLinkProtocol 允许的链接地址，有这些前缀的链接地址不会自动添加http
+        //, allowLinkProtocols: ['http:', 'https:', '#', '/', 'ftp:', 'mailto:', 'tel:', 'git:', 'svn:']
+
         //webAppKey 百度应用的APIkey，每个站长必须首先去百度官网注册一个key后方能正常使用app功能，注册介绍，http://app.baidu.com/static/cms/getapikey.html
         //, webAppKey: ""
+
+        //默认过滤规则相关配置项目
+        //,disabledTableInTable:true  //禁止表格嵌套
+        ,allowDivTransToP:false      //允许进入编辑器的div标签自动变成p标签
+        //,rgb2Hex:true               //默认产出的数据中的color自动从rgb格式变成16进制格式
+
+        // xss 过滤是否开启,inserthtml等操作
+        ,xssFilterRules: false
+        //input xss过滤
+        ,inputXssFilter: false
+        //output xss过滤
+        ,outputXssFilter: false
+        // xss过滤白名单 名单来源: https://raw.githubusercontent.com/leizongmin/js-xss/master/lib/default.js
+        ,whitList: {
+            a:      ['target', 'href', 'title', 'class', 'style'],
+            abbr:   ['title', 'class', 'style'],
+            address: ['class', 'style'],
+            area:   ['shape', 'coords', 'href', 'alt'],
+            article: [],
+            aside:  [],
+            audio:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'class', 'style'],
+            b:      ['class', 'style'],
+            bdi:    ['dir'],
+            bdo:    ['dir'],
+            big:    [],
+            blockquote: ['cite', 'class', 'style'],
+            br:     [],
+            caption: ['class', 'style'],
+            center: [],
+            cite:   [],
+            code:   ['class', 'style'],
+            col:    ['align', 'valign', 'span', 'width', 'class', 'style'],
+            colgroup: ['align', 'valign', 'span', 'width', 'class', 'style'],
+            dd:     ['class', 'style'],
+            del:    ['datetime'],
+            details: ['open'],
+            div:    ['class', 'style'],
+            dl:     ['class', 'style'],
+            dt:     ['class', 'style'],
+            em:     ['class', 'style'],
+            font:   ['color', 'size', 'face'],
+            footer: [],
+            h1:     ['class', 'style'],
+            h2:     ['class', 'style'],
+            h3:     ['class', 'style'],
+            h4:     ['class', 'style'],
+            h5:     ['class', 'style'],
+            h6:     ['class', 'style'],
+            header: [],
+            hr:     [],
+            i:      ['class', 'style'],
+            img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', 'loadingclass', 'class', 'data-latex'],
+            ins:    ['datetime'],
+            li:     ['class', 'style'],
+            mark:   [],
+            nav:    [],
+            ol:     ['class', 'style'],
+            p:      ['class', 'style'],
+            pre:    ['class', 'style'],
+            s:      [],
+            section:[],
+            small:  [],
+            span:   ['class', 'style'],
+            sub:    ['class', 'style'],
+            sup:    ['class', 'style'],
+            strong: ['class', 'style'],
+            table:  ['width', 'border', 'align', 'valign', 'class', 'style'],
+            tbody:  ['align', 'valign', 'class', 'style'],
+            td:     ['width', 'rowspan', 'colspan', 'align', 'valign', 'class', 'style'],
+            tfoot:  ['align', 'valign', 'class', 'style'],
+            th:     ['width', 'rowspan', 'colspan', 'align', 'valign', 'class', 'style'],
+            thead:  ['align', 'valign', 'class', 'style'],
+            tr:     ['rowspan', 'align', 'valign', 'class', 'style'],
+            tt:     [],
+            u:      [],
+            ul:     ['class', 'style'],
+            video:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'class', 'style']
+        }
     };
 
     function getUEBasePath(docUrl, confUrl) {

@@ -27,4 +27,10 @@ public interface ForumnTopicMapper {
      * @return
      */
     Page<ForumnTopic> allforumntopic();
+
+    /**
+     * 新增论坛帖子
+     * @param forumnTopic
+     */
+    void inserts(ForumnTopic forumnTopic);
 }

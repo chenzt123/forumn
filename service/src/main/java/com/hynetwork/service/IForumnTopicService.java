@@ -17,4 +17,10 @@ public interface IForumnTopicService {
      */
     Page<ForumnTopic> allforumntopic();
 
+    /**
+     * 根据帖子id查询对应的帖子
+     * @param topicId
+     * @return
+     */
+    ForumnTopic skipEdit(Integer topicId);
 }

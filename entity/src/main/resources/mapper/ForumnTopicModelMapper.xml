@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hynetwork.mapper.ForumnTopicModelMapper" >
+  <resultMap id="BaseResultMap" type="com.hynetwork.entity.ForumnTopicModel" >
+    <id column="model_id" property="modelId" jdbcType="INTEGER" />
+    <result column="model_title" property="modelTitle" jdbcType="VARCHAR" />
+    <result column="model_type" property="modelType" jdbcType="VARCHAR" />
+    <result column="model_status" property="modelStatus" jdbcType="SMALLINT" />
+    <result column="model_index" property="modelIndex" jdbcType="SMALLINT" />
+    <result column="model_create_time" property="modelCreateTime" jdbcType="TIMESTAMP" />
+    <result column="model_content" property="modelContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.hynetwork.entity.ForumnTopicModel" extends="BaseResultMap" >
+    <result column="model_content" property="modelContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    model_id, model_title, model_type, model_status, model_index, model_create_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    model_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from forumn_topic_model
+    where model_id = #{modelId,jdbcType=INTEGER}
+  </select>
+    <select id="allForumnTopicModel" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      ,
+      <include refid="Blob_Column_List" />
+      from forumn_topic_model ORDER BY  model_index desc
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from forumn_topic_model
+    where model_id = #{modelId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hynetwork.entity.ForumnTopicModel" >
+    insert into forumn_topic_model (model_id, model_title, model_type, 
+      model_status, model_index, model_create_time, 
+      model_content)
+    values (#{modelId,jdbcType=INTEGER}, #{modelTitle,jdbcType=VARCHAR}, #{modelType,jdbcType=VARCHAR}, 
+      #{modelStatus,jdbcType=SMALLINT}, #{modelIndex,jdbcType=SMALLINT}, #{modelCreateTime,jdbcType=TIMESTAMP}, 
+      #{modelContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hynetwork.entity.ForumnTopicModel" >
+    insert into forumn_topic_model
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        model_id,
+      </if>
+      <if test="modelTitle != null" >
+        model_title,
+      </if>
+      <if test="modelType != null" >
+        model_type,
+      </if>
+      <if test="modelStatus != null" >
+        model_status,
+      </if>
+      <if test="modelIndex != null" >
+        model_index,
+      </if>
+      <if test="modelCreateTime != null" >
+        model_create_time,
+      </if>
+      <if test="modelContent != null" >
+        model_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        #{modelId,jdbcType=INTEGER},
+      </if>
+      <if test="modelTitle != null" >
+        #{modelTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="modelType != null" >
+        #{modelType,jdbcType=VARCHAR},
+      </if>
+      <if test="modelStatus != null" >
+        #{modelStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="modelIndex != null" >
+        #{modelIndex,jdbcType=SMALLINT},
+      </if>
+      <if test="modelCreateTime != null" >
+        #{modelCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modelContent != null" >
+        #{modelContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hynetwork.entity.ForumnTopicModel" >
+    update forumn_topic_model
+    <set >
+      <if test="modelTitle != null" >
+        model_title = #{modelTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="modelType != null" >
+        model_type = #{modelType,jdbcType=VARCHAR},
+      </if>
+      <if test="modelStatus != null" >
+        model_status = #{modelStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="modelIndex != null" >
+        model_index = #{modelIndex,jdbcType=SMALLINT},
+      </if>
+      <if test="modelCreateTime != null" >
+        model_create_time = #{modelCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modelContent != null" >
+        model_content = #{modelContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where model_id = #{modelId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.hynetwork.entity.ForumnTopicModel" >
+    update forumn_topic_model
+    set model_title = #{modelTitle,jdbcType=VARCHAR},
+      model_type = #{modelType,jdbcType=VARCHAR},
+      model_status = #{modelStatus,jdbcType=SMALLINT},
+      model_index = #{modelIndex,jdbcType=SMALLINT},
+      model_create_time = #{modelCreateTime,jdbcType=TIMESTAMP},
+      model_content = #{modelContent,jdbcType=LONGVARCHAR}
+    where model_id = #{modelId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hynetwork.entity.ForumnTopicModel" >
+    update forumn_topic_model
+    set model_title = #{modelTitle,jdbcType=VARCHAR},
+      model_type = #{modelType,jdbcType=VARCHAR},
+      model_status = #{modelStatus,jdbcType=SMALLINT},
+      model_index = #{modelIndex,jdbcType=SMALLINT},
+      model_create_time = #{modelCreateTime,jdbcType=TIMESTAMP}
+    where model_id = #{modelId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -30,57 +30,43 @@
                     <legend>论坛帖子列表</legend>
                 </fieldset>
                 <form class="layui-form" action="../informationContent/list" method="post" id="query">
-                    <div class="search-three m_three clearfix">
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">发布时间:</label>
-                            <div class="layui-input-inline" style="width: 350px">
-                                <input type="text" name="startTime" id="startTime" value="${startTime}"
-                                       placeholder="yyyy-MM-dd HH:mm:ss"
-                                       autocomplete="off" class="layui-input">
-                                至
-                                <input type="text" name="endTime" id="endTime" value="${endTime}"
-                                       placeholder="yyyy-MM-dd HH:mm:ss"
-                                       autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-
                         <div class="search-three m_three clearfix">
                             <div class="layui-input-inline">
-                                <label class="layui-form-label">标题:</label>
+                                <label class="layui-form-label">关联期号:</label>
                                 <div class="layui-input-inline">
-                                    <%--<script id="contContent" name="contContent" type="text">${content.contContent}</script>--%>
-                                    <input type="text" name="contTitle" id="contTitle" value="${contTitle}" lay-verify="required|title" autocomplete="off" placeholder="请输入关键字" class="layui-input">
+                                    <input type="text" name="drawId" id="contTitle" value="${drawId}" lay-verify="required|title" autocomplete="off" placeholder="请输入关联期号" class="layui-input">
                                 </div>
                             </div>
-                            <div class="layui-input-inline">
-                                <label class="layui-form-label">作者/来源:</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" name="source" id="source" value="${source}" lay-verify="required|title" autocomplete="off" placeholder="请输入作者名" class="layui-input">
-                                </div>
-                            </div>
-
-                            <div class="layui-input-inline">
-                                <label class="layui-form-label">类别:</label>
-                                <div class="layui-input-inline">
-                                        <select name="columnId" id="columnId">
-                                            <option value="" selected="selected">全部</option>
-                                            <c:forEach items="${typeList}" var="informationType" begin="0" step="1" varStatus="star">
-                                                <option value="${informationType.columnId}" <c:if test="${columnId == informationType.columnId}">selected="selected"</c:if>>${informationType.columnName}</option>
-                                            </c:forEach>
-                                        </select>
-                                </div>
-                            </div>
-
                             <div class="layui-inline">
+                                <label class="layui-form-label">状态:</label>
+                                <div class="layui-input-inline">
+                                    <select id="isBlackList" name="topicStatus" lay-verify="required">
+
+                                        <option value="-1"
+                                                <c:if test="${topicStatus == -1}">selected="selected"</c:if>>全部
+                                        </option>
+
+                                        <option value="0" <c:if test="${topicStatus == 0}">selected="selected"</c:if>>草稿
+                                        </option>
+
+                                        <option value="1" <c:if test="${topicStatus == 1}">selected="selected"</c:if>>审核通过
+                                        </option>
+
+                                        <option value="2" <c:if test="${topicStatus == 2}">selected="selected"</c:if>>审核不通过
+                                        </option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="layui-inline">
                                 <label class="layui-form-label"></label>
                                 <div class="layui-input-inline">
                                     <button type="button" class="layui-btn layui-btn-warm" onclick="queryClean()">重置
                                     </button>
                                     <button type="button" class="layui-btn" onclick="queryList()">查询</button>
                                 </div>
-                            </div>
                         </div>
-                    </div>
+                        </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label"></label>
                         <button type="button" class="layui-btn" style="float:right;margin-right: 20px;"
@@ -109,7 +95,8 @@
                             </colgroup>
                             <thead>
                             <tr>
-                                <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" class="l_table_checkbox" id="allChoose"></th>
+                                <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" class="l_table_checkbox" id="allChoose">
+                                </th>
                                 <th style="text-align: center;">序列</th>
                                 <th style="text-align: center;">论坛主题标题</th>
                                 <th style="text-align: center;">关联期号</th>
@@ -122,7 +109,8 @@
                                 <c:if test="${!empty pageInfo.list}">
                                   <c:forEach items="${pageInfo.list}" var="content" begin="0" step="1" varStatus="i">
                                     <tr>
-                                        <td><input type="checkbox" name="" lay-skin="primary" class="l_table_checkbox" ></td>
+                                        <td><input type="checkbox" name="" lay-skin="primary" class="l_table_checkbox">
+                                        </td>
                                         <td>${i.index+1}</td>
 
                                         <td>${content.topicTitle}</td>
@@ -132,7 +120,7 @@
                                         <td>
                                             <a class="layui-btn layui-btn-xs redact" onclick="edit('${content.topicId}')">编辑</a>
 
-                                            <button type="button"
+                                            <%--<button type="button"
                                                     class="layui-btn layui-btn-danger layui-btn-xs delete"
                                                     onclick="deleteMemberInfo('${content.topicId}')">删除
                                             </button>
@@ -143,7 +131,7 @@
                                             <button type="button"
                                                     class="layui-btn layui-btn-xs layui-btn-danger blacklist"
                                                     onclick="updateIsBlackList('${content.topicId}')">审核不通过
-                                            </button>
+                                            </button>--%>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -196,8 +184,6 @@
                         }
                 }
         });
-
-
         form.on('checkbox(allChoose)', function(data) {
             var child = $(data.elem).parents('.layui-form').find('tbody input[type="checkbox"]');
             child.each(function(index, item) {
@@ -205,7 +191,6 @@
             });
             form.render('checkbox');
         });
-
         var $ = layui.$,
             active = {
                 getCheckData: function () { //获取选中数据
@@ -223,7 +208,6 @@
                     layer.msg(checkStatus.isAll ? '全选' : '未全选')
                 }
             };
-
         $('.demoTable .layui-btn').on('click', function () {
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
@@ -249,8 +233,76 @@
     });
 
     });
-</script>
 
+    //新建论坛帖子
+    function saveMemberInfo() {
+        $.post('../forumntopic/skipAdd', function (str) {
+            layer.open({
+                type: 1,
+                title: '新建论坛帖子',
+                shadeClose: true,
+                shade: false,
+                fixed: false,
+                resize: false,
+                maxmin: false,
+                area: ['100%', '100%'],
+                content: str,
+                success: function (layero, index) {
+                    indexs = index;
+                    layer.full(index);
+                    $(".layui-layer-iframe").css("overflow", "auto");
+                    layui.use(['form', 'layedit', 'laydate', 'table', 'laypage', 'layer'], function () {
+                        var table = layui.table,
+                            form = layui.form,
+                            layedit = layui.layedit,
+                            laydate = layui.laydate,
+                            laypage = layui.laypage,
+                            layer = layui.layer;
+                        form.render();
+                    })
+                },
+                end: function () {
+                    location.reload();
+                }
+            });
+        })
+    };
+
+    //编辑论坛帖子
+    function edit(topicId) {
+        $.post('../forumntopic/skipEdit', {"topicId": topicId}, function (str) {
+            layer.open({
+                type: 1,
+                title: '编辑论坛帖子',
+                shadeClose: true,
+                shade: false,
+                fixed: false,
+                resize: false,
+                maxmin: false, //开启最大化最小化按钮
+                area: ['100%', '100%'],
+                content: str,
+                success: function (layero, index) {
+                    indexs = index;
+                    layer.full(index);
+                    $(".layui-layer-iframe").css("overflow", "auto");
+                    layui.use(['form', 'layedit', 'laydate', 'table', 'laypage', 'layer'], function () {
+                        var table = layui.table,
+                            form = layui.form,
+                            layedit = layui.layedit,
+                            laydate = layui.laydate,
+                            laypage = layui.laypage,
+                            layer = layui.layer;
+                        form.render();
+                    })
+
+                },
+                end: function () {
+                    location.reload();
+                }
+            });
+        })
+    };
+</script>
 <script>
     $(document).ready(function () {
         $('#title').keydown(function (event) {
@@ -270,5 +322,4 @@
     }
 </style>
 </body>
-
 </html>
